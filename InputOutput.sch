@@ -3,1086 +3,1208 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 3
-Title "3.3V 60mA power supply referenced to mains"
+Sheet 3 3
+Title "Isolated inputs & outputs"
 Date "2021-01-17"
 Rev "1.0"
 Comp "ValTronix"
 Comment1 "Project: Energy Monitor"
-Comment2 "Input: 85-265VAC"
-Comment3 "NON ISOLATED buck converter"
+Comment2 ""
+Comment3 ""
 Comment4 "Risk of electrical shock!"
 $EndDescr
-Text HLabel 900  1950 0    50   Input ~ 0
-L
-Text HLabel 900  3750 0    50   Input ~ 0
-N
-Text HLabel 10400 1950 2    50   Output ~ 0
-3V3D
 $Comp
-L ValTronix:RF RF1
-U 1 1 5ED088B3
-P 1350 1950
-AR Path="/5ED088B3" Ref="RF1"  Part="1" 
-AR Path="/5ECFDCE6/5ED088B3" Ref="RF1"  Part="1" 
-F 0 "RF1" V 1046 1950 50  0000 C CNN
-F 1 "8.2" V 1137 1950 50  0000 C CNN
-F 2 "ValTronix:R_Axial_DIN0414_L11.9mm_D4.5mm_P15.24mm_Horizontal" H 1350 1880 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/28729/pr010203.pdf" V 1350 1950 50  0001 C CNN
-F 4 "2W" V 1228 1950 50  0000 C CNN "Power"
-F 5 "PR02000208208JA100" H 1350 1950 50  0001 C CNN "Part #"
-	1    1350 1950
+L Isolator:PC827 U?
+U 2 1 60ADCA14
+P 5350 3900
+AR Path="/60ADCA14" Ref="U?"  Part="2" 
+AR Path="/60ABEC6B/60ADCA14" Ref="U7"  Part="2" 
+F 0 "U7" H 5350 4225 50  0000 C CNN
+F 1 "PC827" H 5350 4134 50  0000 C CNN
+F 2 "ValTronix:SMDIP-8_W9.53mm" H 5150 3700 50  0001 L CIN
+F 3 "http://optoelectronics.liteon.com/upload/download/DS-70-96-0016/LTV-8X7%20series.PDF" H 5350 3900 50  0001 L CNN
+	2    5350 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 60ADCA1A
+P 3900 3800
+AR Path="/60ADCA1A" Ref="R?"  Part="1" 
+AR Path="/60ABEC6B/60ADCA1A" Ref="R19"  Part="1" 
+F 0 "R19" V 4107 3800 50  0000 C CNN
+F 1 "2k" V 4016 3800 50  0000 C CNN
+F 2 "ValTronix:R_0805" V 3830 3800 50  0001 C CNN
+F 3 "~" H 3900 3800 50  0001 C CNN
+	1    3900 3800
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5050 4000 4900 4000
+Wire Wire Line
+	4900 4000 4900 4100
+$Comp
+L Device:R R?
+U 1 1 60ADCA22
+P 3900 2950
+AR Path="/60ADCA22" Ref="R?"  Part="1" 
+AR Path="/60ABEC6B/60ADCA22" Ref="R17"  Part="1" 
+F 0 "R17" V 4107 2950 50  0000 C CNN
+F 1 "2k" V 4016 2950 50  0000 C CNN
+F 2 "ValTronix:R_0805" V 3830 2950 50  0001 C CNN
+F 3 "~" H 3900 2950 50  0001 C CNN
+	1    3900 2950
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5050 3150 4900 3150
+Wire Wire Line
+	4900 3150 4900 3250
+$Comp
+L Device:R R?
+U 1 1 60ADCA2A
+P 4600 1900
+AR Path="/60ADCA2A" Ref="R?"  Part="1" 
+AR Path="/60ABEC6B/60ADCA2A" Ref="R16"  Part="1" 
+F 0 "R16" V 4807 1900 50  0000 C CNN
+F 1 "1k" V 4716 1900 50  0000 C CNN
+F 2 "ValTronix:R_0805" V 4530 1900 50  0001 C CNN
+F 3 "~" H 4600 1900 50  0001 C CNN
+	1    4600 1900
+	0    -1   -1   0   
+$EndComp
+Text Label 3150 2950 0    50   ~ 0
+DIO0
+Text Label 3150 3800 0    50   ~ 0
+DIO1
+Wire Notes Line width 10
+	5350 550  5350 6450
+$Comp
+L ValTronix:LED_0805 LD?
+U 1 1 60ADCA39
+P 4600 4000
+AR Path="/60ADCA39" Ref="LD?"  Part="1" 
+AR Path="/60ABEC6B/60ADCA39" Ref="LD2"  Part="1" 
+F 0 "LD2" H 4593 4125 50  0000 C CNN
+F 1 "LED_0805" H 4593 4216 50  0000 C CNN
+F 2 "ValTronix:LED_0805" H 4600 4000 50  0001 C CNN
+F 3 "~" H 4600 4000 50  0001 C CNN
+F 4 "Yellow" H 4593 4307 50  0000 C CNN "Color"
+	1    4600 4000
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 60ADCA3F
+P 3650 5050
+AR Path="/60ADCA3F" Ref="R?"  Part="1" 
+AR Path="/60ABEC6B/60ADCA3F" Ref="R23"  Part="1" 
+F 0 "R23" V 3857 5050 50  0000 C CNN
+F 1 "200" V 3766 5050 50  0000 C CNN
+F 2 "ValTronix:R_0805" V 3580 5050 50  0001 C CNN
+F 3 "~" H 3650 5050 50  0001 C CNN
+	1    3650 5050
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4900 4850 5050 4850
+Wire Wire Line
+	4600 5050 4500 5050
+Text Notes 4900 1900 0    50   ~ 0
+2mA
+Text Notes 3400 3050 0    50   ~ 0
+1mA
+Text Notes 3400 3900 0    50   ~ 0
+1mA
+Wire Wire Line
+	3800 5050 3900 5050
+Wire Wire Line
+	4500 4650 4600 4650
+Text Notes 7700 1700 1    50   ~ 0
+4800-8N1
+$Comp
+L Device:R R?
+U 1 1 60ADCA53
+P 4350 4650
+AR Path="/60ADCA53" Ref="R?"  Part="1" 
+AR Path="/60ABEC6B/60ADCA53" Ref="R22"  Part="1" 
+F 0 "R22" V 4557 4650 50  0000 C CNN
+F 1 "10k" V 4466 4650 50  0000 C CNN
+F 2 "ValTronix:R_0805" V 4280 4650 50  0001 C CNN
+F 3 "~" H 4350 4650 50  0001 C CNN
+	1    4350 4650
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4050 4650 4200 4650
+$Comp
+L Device:R R?
+U 1 1 60ADCA5A
+P 3900 4650
+AR Path="/60ADCA5A" Ref="R?"  Part="1" 
+AR Path="/60ABEC6B/60ADCA5A" Ref="R21"  Part="1" 
+F 0 "R21" V 4107 4650 50  0000 C CNN
+F 1 "10k" V 4016 4650 50  0000 C CNN
+F 2 "ValTronix:R_0805" V 3830 4650 50  0001 C CNN
+F 3 "~" H 3900 4650 50  0001 C CNN
+	1    3900 4650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 60ADCA60
+P 4900 4950
+AR Path="/60ADCA60" Ref="#PWR?"  Part="1" 
+AR Path="/60ABEC6B/60ADCA60" Ref="#PWR052"  Part="1" 
+F 0 "#PWR052" H 4900 4700 50  0001 C CNN
+F 1 "GNDD" H 4904 4795 50  0000 C CNN
+F 2 "" H 4900 4950 50  0001 C CNN
+F 3 "" H 4900 4950 50  0001 C CNN
+	1    4900 4950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 4850 4900 4950
+Text Label 3150 5050 0    50   ~ 0
+DIO3
+Connection ~ 4600 4650
+Wire Wire Line
+	4600 4650 5050 4650
+Wire Wire Line
+	4600 4650 4600 5050
+Wire Wire Line
+	3650 4650 3750 4650
+Wire Wire Line
+	3650 4550 3650 4650
+$Comp
+L power:+3.3V #PWR?
+U 1 1 60ADCA6E
+P 3650 4550
+AR Path="/60ADCA6E" Ref="#PWR?"  Part="1" 
+AR Path="/60ABEC6B/60ADCA6E" Ref="#PWR051"  Part="1" 
+F 0 "#PWR051" H 3650 4400 50  0001 C CNN
+F 1 "+3.3V" H 3665 4723 50  0000 C CNN
+F 2 "" H 3650 4550 50  0001 C CNN
+F 3 "" H 3650 4550 50  0001 C CNN
+	1    3650 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 60ADCA74
+P 3900 5300
+AR Path="/60ADCA74" Ref="R?"  Part="1" 
+AR Path="/60ABEC6B/60ADCA74" Ref="R34"  Part="1" 
+F 0 "R34" H 3830 5254 50  0000 R CNN
+F 1 "1k" H 3830 5345 50  0000 R CNN
+F 2 "ValTronix:R_0805" V 3830 5300 50  0001 C CNN
+F 3 "~" H 3900 5300 50  0001 C CNN
+	1    3900 5300
+	-1   0    0    1   
+$EndComp
+$Comp
+L ValTronix:LED_0805 LD?
+U 1 1 60ADCA7B
+P 4600 3150
+AR Path="/60ADCA7B" Ref="LD?"  Part="1" 
+AR Path="/60ABEC6B/60ADCA7B" Ref="LD1"  Part="1" 
+F 0 "LD1" H 4593 3275 50  0000 C CNN
+F 1 "LED_0805" H 4593 3366 50  0000 C CNN
+F 2 "ValTronix:LED_0805" H 4600 3150 50  0001 C CNN
+F 3 "~" H 4600 3150 50  0001 C CNN
+F 4 "Red" H 4593 3457 50  0000 C CNN "Color"
+	1    4600 3150
+	-1   0    0    1   
+$EndComp
+$Comp
+L ValTronix:LED_0805 LD?
+U 1 1 60ADCA82
+P 3900 5700
+AR Path="/60ADCA82" Ref="LD?"  Part="1" 
+AR Path="/60ABEC6B/60ADCA82" Ref="LD4"  Part="1" 
+F 0 "LD4" V 3984 5582 50  0000 R CNN
+F 1 "LED_0805" V 3893 5582 50  0000 R CNN
+F 2 "ValTronix:LED_0805" H 3900 5700 50  0001 C CNN
+F 3 "~" H 3900 5700 50  0001 C CNN
+F 4 "Blue" V 3802 5582 50  0000 R CNN "Color"
+	1    3900 5700
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3900 5050 3900 5150
+Connection ~ 3900 5050
+Wire Wire Line
+	3900 5050 3950 5050
+Wire Wire Line
+	3900 5450 3900 5550
+Wire Wire Line
+	3900 5850 3900 5950
+$Comp
+L power:GNDD #PWR?
+U 1 1 60ADCA8D
+P 4900 3250
+AR Path="/60ADCA8D" Ref="#PWR?"  Part="1" 
+AR Path="/60ABEC6B/60ADCA8D" Ref="#PWR044"  Part="1" 
+F 0 "#PWR044" H 4900 3000 50  0001 C CNN
+F 1 "GNDD" H 4904 3095 50  0000 C CNN
+F 2 "" H 4900 3250 50  0001 C CNN
+F 3 "" H 4900 3250 50  0001 C CNN
+	1    4900 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 60ADCA93
+P 4900 4100
+AR Path="/60ADCA93" Ref="#PWR?"  Part="1" 
+AR Path="/60ABEC6B/60ADCA93" Ref="#PWR048"  Part="1" 
+F 0 "#PWR048" H 4900 3850 50  0001 C CNN
+F 1 "GNDD" H 4904 3945 50  0000 C CNN
+F 2 "" H 4900 4100 50  0001 C CNN
+F 3 "" H 4900 4100 50  0001 C CNN
+	1    4900 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 60ADCA99
+P 3900 3150
+AR Path="/60ADCA99" Ref="R?"  Part="1" 
+AR Path="/60ABEC6B/60ADCA99" Ref="R18"  Part="1" 
+F 0 "R18" V 4015 3150 50  0000 C CNN
+F 1 "1k" V 4106 3150 50  0000 C CNN
+F 2 "ValTronix:R_0805" V 3830 3150 50  0001 C CNN
+F 3 "~" H 3900 3150 50  0001 C CNN
+	1    3900 3150
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4050 3800 5050 3800
+Wire Wire Line
+	4750 4000 4900 4000
+Connection ~ 4900 4000
+$Comp
+L Device:R R?
+U 1 1 60ADCAA2
+P 3900 4000
+AR Path="/60ADCAA2" Ref="R?"  Part="1" 
+AR Path="/60ABEC6B/60ADCAA2" Ref="R20"  Part="1" 
+F 0 "R20" V 4015 4000 50  0000 C CNN
+F 1 "1k" V 4106 4000 50  0000 C CNN
+F 2 "ValTronix:R_0805" V 3830 4000 50  0001 C CNN
+F 3 "~" H 3900 4000 50  0001 C CNN
+	1    3900 4000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3750 4000 3650 4000
+Wire Wire Line
+	3650 4000 3650 3800
+Connection ~ 3650 3800
+Wire Wire Line
+	3650 3800 3750 3800
+Wire Wire Line
+	4050 4000 4450 4000
+Wire Wire Line
+	3750 3150 3650 3150
+Wire Wire Line
+	3650 3150 3650 2950
+Connection ~ 3650 2950
+Wire Wire Line
+	3650 2950 3750 2950
+Wire Wire Line
+	4050 3150 4450 3150
+Wire Wire Line
+	4750 3150 4900 3150
+Connection ~ 4900 3150
+Wire Wire Line
+	4050 2950 5050 2950
+Text Label 4700 2950 0    50   ~ 0
+DO0
+Text Label 4700 3800 0    50   ~ 0
+DO1
+Text Label 4700 4650 0    50   ~ 0
+~DI3
+Text Label 4150 3150 0    50   ~ 0
+DO0L
+Text Label 4150 4000 0    50   ~ 0
+DO1L
+Text Label 3900 5450 3    50   ~ 0
+DI3L
+$Comp
+L power:GNDD #PWR?
+U 1 1 60ADCACB
+P 4900 2200
+AR Path="/60ADCACB" Ref="#PWR?"  Part="1" 
+AR Path="/60ABEC6B/60ADCACB" Ref="#PWR042"  Part="1" 
+F 0 "#PWR042" H 4900 1950 50  0001 C CNN
+F 1 "GNDD" H 4904 2045 50  0000 C CNN
+F 2 "" H 4900 2200 50  0001 C CNN
+F 3 "" H 4900 2200 50  0001 C CNN
+	1    4900 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 2200 4900 2100
+$Comp
+L power:GNDD #PWR?
+U 1 1 60ADCAD2
+P 5250 1500
+AR Path="/60ADCAD2" Ref="#PWR?"  Part="1" 
+AR Path="/60ABEC6B/60ADCAD2" Ref="#PWR039"  Part="1" 
+F 0 "#PWR039" H 5250 1250 50  0001 C CNN
+F 1 "GNDD" H 5254 1345 50  0000 C CNN
+F 2 "" H 5250 1500 50  0001 C CNN
+F 3 "" H 5250 1500 50  0001 C CNN
+	1    5250 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60ADCAD8
+P 5750 1350
+AR Path="/60ADCAD8" Ref="#PWR?"  Part="1" 
+AR Path="/60ABEC6B/60ADCAD8" Ref="#PWR037"  Part="1" 
+F 0 "#PWR037" H 5750 1100 50  0001 C CNN
+F 1 "GND" H 5755 1177 50  0000 C CNN
+F 2 "" H 5750 1350 50  0001 C CNN
+F 3 "" H 5750 1350 50  0001 C CNN
+	1    5750 1350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5750 1250 5750 1350
+$Comp
+L ValTronix:H11L1SM U?
+U 1 1 60ADCADF
+P 5450 2000
+AR Path="/60ADCADF" Ref="U?"  Part="1" 
+AR Path="/60ABEC6B/60ADCADF" Ref="U6"  Part="1" 
+F 0 "U6" H 5550 2250 50  0000 L CNN
+F 1 "H11L1SM" H 5500 1750 50  0000 L CNN
+F 2 "ValTronix:SMDIP-6_W9.53mm" H 5360 2000 50  0001 C CNN
+F 3 "https://www.fairchildsemi.com/datasheets/H1/H11L1M.pdf" H 5360 2000 50  0001 C CNN
+	1    5450 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4750 1900 5150 1900
+Wire Wire Line
+	4900 2100 5150 2100
+$Comp
+L power:GND #PWR?
+U 1 1 60ADCAE7
+P 5450 2350
+AR Path="/60ADCAE7" Ref="#PWR?"  Part="1" 
+AR Path="/60ABEC6B/60ADCAE7" Ref="#PWR043"  Part="1" 
+F 0 "#PWR043" H 5450 2100 50  0001 C CNN
+F 1 "GND" H 5455 2177 50  0000 C CNN
+F 2 "" H 5450 2350 50  0001 C CNN
+F 3 "" H 5450 2350 50  0001 C CNN
+	1    5450 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 60ADCAED
+P 5450 1650
+AR Path="/60ADCAED" Ref="#PWR?"  Part="1" 
+AR Path="/60ABEC6B/60ADCAED" Ref="#PWR041"  Part="1" 
+F 0 "#PWR041" H 5450 1500 50  0001 C CNN
+F 1 "VCC" H 5465 1823 50  0000 C CNN
+F 2 "" H 5450 1650 50  0001 C CNN
+F 3 "" H 5450 1650 50  0001 C CNN
+	1    5450 1650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5450 1650 5450 1700
+Wire Wire Line
+	5450 2350 5450 2300
+$Comp
+L Device:R R?
+U 1 1 60ADCAF5
+P 6000 1050
+AR Path="/60ADCAF5" Ref="R?"  Part="1" 
+AR Path="/60ABEC6B/60ADCAF5" Ref="R14"  Part="1" 
+F 0 "R14" V 6207 1050 50  0000 C CNN
+F 1 "820" V 6116 1050 50  0000 C CNN
+F 2 "ValTronix:R_0805" V 5930 1050 50  0001 C CNN
+F 3 "~" H 6000 1050 50  0001 C CNN
+	1    6000 1050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ValTronix:H11L1SM U?
+U 1 1 60ADCAFB
+P 5250 1150
+AR Path="/60ADCAFB" Ref="U?"  Part="1" 
+AR Path="/60ABEC6B/60ADCAFB" Ref="U4"  Part="1" 
+F 0 "U4" H 5400 1400 50  0000 C CNN
+F 1 "H11L1SM" H 5500 900 50  0000 C CNN
+F 2 "ValTronix:SMDIP-6_W9.53mm" H 5160 1150 50  0001 C CNN
+F 3 "https://www.fairchildsemi.com/datasheets/H1/H11L1M.pdf" H 5160 1150 50  0001 C CNN
+	1    5250 1150
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	5250 1500 5250 1450
+$Comp
+L power:+3.3V #PWR?
+U 1 1 60ADCB02
+P 3550 6950
+AR Path="/60ADCB02" Ref="#PWR?"  Part="1" 
+AR Path="/60ABEC6B/60ADCB02" Ref="#PWR066"  Part="1" 
+F 0 "#PWR066" H 3550 6800 50  0001 C CNN
+F 1 "+3.3V" H 3565 7123 50  0000 C CNN
+F 2 "" H 3550 6950 50  0001 C CNN
+F 3 "" H 3550 6950 50  0001 C CNN
+	1    3550 6950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 60ADCB09
+P 3550 7150
+AR Path="/60ADCB09" Ref="C?"  Part="1" 
+AR Path="/60ABEC6B/60ADCB09" Ref="C30"  Part="1" 
+F 0 "C30" H 3436 7196 50  0000 R CNN
+F 1 "100nF" H 3436 7105 50  0000 R CNN
+F 2 "ValTronix:C_0805" H 3588 7000 50  0001 C CNN
+F 3 "~" H 3550 7150 50  0001 C CNN
+F 4 "08055C104KAT2A" V 3550 7150 50  0001 C CNN "Part"
+	1    3550 7150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 60ADCB0F
+P 3550 7400
+AR Path="/60ADCB0F" Ref="#PWR?"  Part="1" 
+AR Path="/60ABEC6B/60ADCB0F" Ref="#PWR067"  Part="1" 
+F 0 "#PWR067" H 3550 7150 50  0001 C CNN
+F 1 "GNDD" H 3554 7245 50  0000 C CNN
+F 2 "" H 3550 7400 50  0001 C CNN
+F 3 "" H 3550 7400 50  0001 C CNN
+	1    3550 7400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3550 7400 3550 7300
+Wire Wire Line
+	5250 850  5150 850 
+Wire Wire Line
+	3550 6950 3550 7000
+$Comp
+L Device:R R?
+U 1 1 60ADCB18
+P 4600 1000
+AR Path="/60ADCB18" Ref="R?"  Part="1" 
+AR Path="/60ABEC6B/60ADCB18" Ref="R13"  Part="1" 
+F 0 "R13" V 4485 1000 50  0000 C CNN
+F 1 "1k" V 4394 1000 50  0000 C CNN
+F 2 "ValTronix:R_0805" V 4530 1000 50  0001 C CNN
+F 3 "~" H 4600 1000 50  0001 C CNN
+	1    4600 1000
 	0    1    1    0   
 $EndComp
 $Comp
-L ValTronix:1N4007 D1
-U 1 1 5ED08A80
-P 1900 1950
-F 0 "D1" H 1900 2167 50  0000 C CNN
-F 1 "1N4007" H 1900 2076 50  0000 C CNN
-F 2 "ValTronix:D_DO-41_SOD81_P10.16mm_Horizontal" H 1900 1775 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 1900 1950 50  0001 C CNN
-	1    1900 1950
+L power:+3.3V #PWR?
+U 1 1 60ADCB1E
+P 4300 850
+AR Path="/60ADCB1E" Ref="#PWR?"  Part="1" 
+AR Path="/60ABEC6B/60ADCB1E" Ref="#PWR034"  Part="1" 
+F 0 "#PWR034" H 4300 700 50  0001 C CNN
+F 1 "+3.3V" H 4315 1023 50  0000 C CNN
+F 2 "" H 4300 850 50  0001 C CNN
+F 3 "" H 4300 850 50  0001 C CNN
+	1    4300 850 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4300 1000 4300 850 
+Wire Wire Line
+	4300 1000 4450 1000
+Wire Wire Line
+	4900 1150 4900 1000
+$Comp
+L power:+3.3V #PWR?
+U 1 1 60ADCB27
+P 5150 850
+AR Path="/60ADCB27" Ref="#PWR?"  Part="1" 
+AR Path="/60ABEC6B/60ADCB27" Ref="#PWR035"  Part="1" 
+F 0 "#PWR035" H 5150 700 50  0001 C CNN
+F 1 "+3.3V" H 5165 1023 50  0000 C CNN
+F 2 "" H 5150 850 50  0001 C CNN
+F 3 "" H 5150 850 50  0001 C CNN
+	1    5150 850 
+	1    0    0    -1  
+$EndComp
+Text Notes 5550 1050 0    50   ~ 0
+>1.8mA\n<60mA
+Connection ~ 4900 1150
+Wire Wire Line
+	4900 1150 4950 1150
+Wire Wire Line
+	5550 1250 5750 1250
+Wire Wire Line
+	4900 1000 4750 1000
+$Comp
+L Isolator:PC827 U?
+U 1 1 60ADCB33
+P 5350 3050
+AR Path="/60ADCB33" Ref="U?"  Part="1" 
+AR Path="/60ABEC6B/60ADCB33" Ref="U7"  Part="1" 
+F 0 "U7" H 5350 3375 50  0000 C CNN
+F 1 "PC827" H 5350 3284 50  0000 C CNN
+F 2 "ValTronix:SMDIP-8_W9.53mm" H 5150 2850 50  0001 L CIN
+F 3 "http://optoelectronics.liteon.com/upload/download/DS-70-96-0016/LTV-8X7%20series.PDF" H 5350 3050 50  0001 L CNN
+	1    5350 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 5700 5050 5700
+$Comp
+L power:GNDD #PWR?
+U 1 1 60ADCB3C
+P 4900 5800
+AR Path="/60ADCB3C" Ref="#PWR?"  Part="1" 
+AR Path="/60ABEC6B/60ADCB3C" Ref="#PWR061"  Part="1" 
+F 0 "#PWR061" H 4900 5550 50  0001 C CNN
+F 1 "GNDD" H 4904 5645 50  0000 C CNN
+F 2 "" H 4900 5800 50  0001 C CNN
+F 3 "" H 4900 5800 50  0001 C CNN
+	1    4900 5800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 5700 4900 5800
+Text GLabel 4900 5500 0    50   Output ~ 0
+~RESET
+Wire Wire Line
+	4900 5500 5050 5500
+Wire Wire Line
+	5750 5700 5750 5800
+Wire Wire Line
+	5650 5700 5750 5700
+$Comp
+L power:GND #PWR?
+U 1 1 60ADCB47
+P 5750 5800
+AR Path="/60ADCB47" Ref="#PWR?"  Part="1" 
+AR Path="/60ABEC6B/60ADCB47" Ref="#PWR062"  Part="1" 
+F 0 "#PWR062" H 5750 5550 50  0001 C CNN
+F 1 "GND" H 5755 5627 50  0000 C CNN
+F 2 "" H 5750 5800 50  0001 C CNN
+F 3 "" H 5750 5800 50  0001 C CNN
+	1    5750 5800
 	-1   0    0    -1  
 $EndComp
 $Comp
-L ValTronix:RFP R25
-U 1 1 5ED09B23
-P 2650 1950
-AR Path="/5ED09B23" Ref="R25"  Part="1" 
-AR Path="/5ECFDCE6/5ED09B23" Ref="R25"  Part="1" 
-F 0 "R25" V 2345 1950 50  0000 C CNN
-F 1 "100" V 2436 1950 50  0000 C CNN
-F 2 "ValTronix:R_Axial_DIN0414_L11.9mm_D4.5mm_P15.24mm_Horizontal" V 2650 1950 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/31033/rox.pdf" V 2650 1950 50  0001 C CNN
-F 4 "1W" V 2527 1950 50  0000 C CNN "Power"
-F 5 "ROX2SJ100R" H 2650 1950 50  0001 C CNN "Part #"
-	1    2650 1950
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:C C18
-U 1 1 5ED0A2A5
-P 4350 1450
-F 0 "C18" H 4465 1541 50  0000 L CNN
-F 1 "0.1µF" H 4465 1450 50  0000 L CNN
-F 2 "ValTronix:C_1206" H 4388 1300 50  0001 C CNN
-F 3 "~" H 4350 1450 50  0001 C CNN
-F 4 "50V (X7R)" H 4465 1359 50  0000 L CNN "Voltage"
-F 5 "CL31B104KBCNNNL" H 4350 1450 50  0001 C CNN "Part"
-	1    4350 1450
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:L_Core_Ferrite L1
-U 1 1 5ED0B066
-P 5050 1950
-F 0 "L1" V 5365 1950 50  0000 C CNN
-F 1 "1800µH" V 5274 1950 50  0000 C CNN
-F 2 "ValTronix:L_Bourns_SDR1006" H 5050 1950 50  0001 C CNN
-F 3 "~" H 5050 1950 50  0001 C CNN
-F 4 "122mA" V 5183 1950 50  0000 C CNN "Current"
-F 5 "SDR1006-182KL" V 5050 1950 50  0001 C CNN "Part"
-	1    5050 1950
+L Device:R R?
+U 1 1 60ADCB4D
+P 6000 5500
+AR Path="/60ADCB4D" Ref="R?"  Part="1" 
+AR Path="/60ABEC6B/60ADCB4D" Ref="R35"  Part="1" 
+F 0 "R35" V 6207 5500 50  0000 C CNN
+F 1 "820" V 6116 5500 50  0000 C CNN
+F 2 "ValTronix:R_0805" V 5930 5500 50  0001 C CNN
+F 3 "~" H 6000 5500 50  0001 C CNN
+	1    6000 5500
 	0    -1   -1   0   
 $EndComp
+Text Notes 5700 2100 0    50   ~ 0
+<50mA
+Wire Wire Line
+	5550 1050 5850 1050
 $Comp
-L Device:CP C19
-U 1 1 5ED0B6DB
-P 6000 2850
-F 0 "C19" H 6118 2941 50  0000 L CNN
-F 1 "47µF" H 6118 2850 50  0000 L CNN
-F 2 "ValTronix:CP_Elec_6.3x7.7" H 6038 2700 50  0001 C CNN
-F 3 "~" H 6000 2850 50  0001 C CNN
-F 4 "25V" H 6118 2759 50  0000 L CNN "Voltage"
-	1    6000 2850
+L Isolator:PC827 U?
+U 1 1 60ADCB5B
+P 5350 5600
+AR Path="/60ADCB5B" Ref="U?"  Part="2" 
+AR Path="/60ABEC6B/60ADCB5B" Ref="U8"  Part="1" 
+F 0 "U8" H 5350 5925 50  0000 C CNN
+F 1 "PC827" H 5350 5834 50  0000 C CNN
+F 2 "ValTronix:SMDIP-8_W9.53mm" H 5150 5400 50  0001 L CIN
+F 3 "http://optoelectronics.liteon.com/upload/download/DS-70-96-0016/LTV-8X7%20series.PDF" H 5350 5600 50  0001 L CNN
+	1    5350 5600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Isolator:PC827 U?
+U 2 1 60ADCB61
+P 5350 4750
+AR Path="/60ADCB61" Ref="U?"  Part="1" 
+AR Path="/60ABEC6B/60ADCB61" Ref="U8"  Part="2" 
+F 0 "U8" H 5350 5075 50  0000 C CNN
+F 1 "PC827" H 5350 4984 50  0000 C CNN
+F 2 "ValTronix:SMDIP-8_W9.53mm" H 5150 4550 50  0001 L CIN
+F 3 "http://optoelectronics.liteon.com/upload/download/DS-70-96-0016/LTV-8X7%20series.PDF" H 5350 4750 50  0001 L CNN
+	2    5350 4750
+	-1   0    0    -1  
+$EndComp
+$Comp
+L ValTronix:74LVC1G14 U?
+U 1 1 60ADCB6D
+P 4200 5050
+AR Path="/60ADCB6D" Ref="U?"  Part="1" 
+AR Path="/60ABEC6B/60ADCB6D" Ref="U3"  Part="1" 
+F 0 "U3" H 4175 5317 50  0000 C CNN
+F 1 "74LVC1G14" H 4175 5226 50  0000 C CNN
+F 2 "ValTronix:SOT-25" H 4150 5000 50  0001 C CNN
+F 3 "https://www.diodes.com/assets/Datasheets/74LVC1G14.pdf" H 4150 5000 50  0001 C CNN
+	1    4200 5050
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	6350 1050 6150 1050
+$Comp
+L ValTronix:74LVC1G14 U?
+U 1 1 60ADCB74
+P 3950 1900
+AR Path="/60ADCB74" Ref="U?"  Part="1" 
+AR Path="/60ABEC6B/60ADCB74" Ref="U5"  Part="1" 
+F 0 "U5" H 3925 2167 50  0000 C CNN
+F 1 "74LVC1G14" H 3925 2076 50  0000 C CNN
+F 2 "ValTronix:SOT-25" H 3900 1850 50  0001 C CNN
+F 3 "https://www.diodes.com/assets/Datasheets/74LVC1G14.pdf" H 3900 1850 50  0001 C CNN
+	1    3950 1900
 	1    0    0    -1  
 $EndComp
 $Comp
-L ValTronix:BZV55Cxxx DZ1
-U 1 1 5ED10594
-P 5450 3300
-F 0 "DZ1" V 5404 3380 50  0000 L CNN
-F 1 "BZV55C3V9" V 5495 3380 50  0000 L CNN
-F 2 "ValTronix:D_MiniMELF" H 5450 3125 50  0001 C CNN
-F 3 "https://www.mouser.fr/datasheet/2/395/BZV55C2V4_SERIES_G1804-1519273.pdf" H 5450 3300 50  0001 C CNN
-	1    5450 3300
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:CP C17
-U 1 1 5ED110E2
-P 3000 2850
-F 0 "C17" H 3118 2941 50  0000 L CNN
-F 1 "4.7µF" H 3118 2850 50  0000 L CNN
-F 2 "ValTronix:CP_Radial_D10.0mm_P5.00mm" H 3038 2700 50  0001 C CNN
-F 3 "https://docs.rs-online.com/8fad/0900766b813c76c1.pdf" H 3000 2850 50  0001 C CNN
-F 4 "400V" H 3118 2759 50  0000 L CNN "Voltage"
-F 5 "ULD2G4R7MPD" H 3000 2850 50  0001 C CNN "Part"
-	1    3000 2850
-	1    0    0    -1  
-$EndComp
-Text Notes 4500 2300 3    50   ~ 0
-Ultra-Fast\ntrr<=75ns (Imax < 63mA)\ntrr<=35ns (Imax < 80mA)
-Text Notes 5350 3400 1    50   ~ 0
-1.5mA
-$Comp
-L ValTronix:LNK3202P U10
-U 1 1 5ED12F70
-P 3650 1950
-F 0 "U10" H 3650 1675 50  0000 C CNN
-F 1 "LNK3202P" H 3650 1584 50  0000 C CNN
-F 2 "ValTronix:PDIP-8C" H 3650 1950 50  0001 C CIN
-F 3 "https://ac-dc.power.com/sites/default/files/product-docs/LinkSwitch-TN2_family_datasheet.pdf" H 3650 1950 50  0001 C CNN
-	1    3650 1950
-	1    0    0    -1  
-$EndComp
-$Comp
-L ValTronix:AMS1117-3.3 U12
-U 1 1 5ED13528
-P 7700 1950
-F 0 "U12" H 7700 2192 50  0000 C CNN
-F 1 "AMS1117-3.3" H 7700 2101 50  0000 C CNN
-F 2 "ValTronix:SOT-223-3_TabPin2" H 7700 2150 50  0001 C CNN
-F 3 "http://www.diodes.com/datasheets/AP1117.pdf" H 7800 1700 50  0001 C CNN
-	1    7700 1950
-	1    0    0    -1  
-$EndComp
-Text Notes 3500 1650 2    50   ~ 0
-2V
-$Comp
-L Connector:TestPoint_Flag TP1
-U 1 1 5ED14300
-P 6600 1700
-F 0 "TP1" H 6860 1794 50  0000 L CNN
-F 1 "5V" H 6860 1703 50  0000 L CNN
-F 2 "Measurement_Points:Measurement_Point_Square-SMD-Pad_Big" H 6800 1700 50  0001 C CNN
-F 3 "~" H 6800 1700 50  0001 C CNN
-	1    6600 1700
-	1    0    0    -1  
-$EndComp
-Text Notes 4000 2150 0    50   ~ 0
-minimum\nload: 3mA
-Wire Wire Line
-	3750 1650 3750 950 
-Wire Wire Line
-	4350 950  4350 1300
-Wire Wire Line
-	4350 1600 4350 1950
-Wire Wire Line
-	4050 1950 4100 1950
-Wire Wire Line
-	3300 1150 3550 1150
-Wire Wire Line
-	3300 950  3750 950 
-Connection ~ 3750 950 
-Text Label 3350 950  0    50   ~ 0
-BP
-Text Label 3350 1150 0    50   ~ 0
-FB
-$Comp
-L Device:R R26
-U 1 1 5ED16B75
-P 5450 2400
-F 0 "R26" H 5520 2446 50  0000 L CNN
-F 1 "560" H 5520 2355 50  0000 L CNN
-F 2 "ValTronix:R_0805" V 5380 2400 50  0001 C CNN
-F 3 "~" H 5450 2400 50  0001 C CNN
-	1    5450 2400
-	1    0    0    -1  
-$EndComp
-$Comp
-L Isolator:PC817 U11
-U 1 1 5ED18249
-P 3000 1050
-F 0 "U11" H 3000 1375 50  0000 C CNN
-F 1 "PC817" H 3000 1284 50  0000 C CNN
-F 2 "ValTronix:DIP-4_W7.62mm_LongPads" H 2800 850 50  0001 L CIN
-F 3 "http://www.soselectronic.cz/a_info/resource/d/pc817.pdf" H 3000 1050 50  0001 L CNN
-	1    3000 1050
-	1    0    0    -1  
-$EndComp
-Text Label 5200 2850 0    50   ~ 0
-Vz
-Text Label 1650 1150 0    50   ~ 0
-Vz
-Text Label 2450 950  0    50   ~ 0
-S+
-Wire Wire Line
-	1650 1150 1950 1150
-Wire Wire Line
-	2450 950  2700 950 
-Connection ~ 4350 1950
-Wire Wire Line
-	5200 1950 5450 1950
-Wire Wire Line
-	5450 1950 5450 2250
-Wire Wire Line
-	5450 2550 5450 2850
-Wire Wire Line
-	5200 2850 5450 2850
-Connection ~ 5450 2850
-Wire Wire Line
-	5450 2850 5450 3150
-Wire Wire Line
-	5450 3450 5450 3750
-Wire Wire Line
-	5450 3750 4600 3750
-Wire Wire Line
-	6000 1950 6000 2700
-Connection ~ 5450 1950
-Wire Wire Line
-	6000 3000 6000 3750
-Connection ~ 5450 3750
-$Comp
-L ValTronix:UF4005 D2
-U 1 1 5ED2798C
-P 4600 2850
-F 0 "D2" V 4554 2930 50  0000 L CNN
-F 1 "UF4005" V 4645 2930 50  0000 L CNN
-F 2 "ValTronix:D_DO-41_SOD81_P10.16mm_Horizontal" H 4600 2675 50  0001 C CNN
-F 3 "https://www.vishay.com/docs/88755/uf4001.pdf" H 4600 2850 50  0001 C CNN
-	1    4600 2850
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	4350 1950 4600 1950
-Wire Wire Line
-	4600 1950 4900 1950
-Connection ~ 4600 1950
-Wire Wire Line
-	4600 3000 4600 3750
-Connection ~ 4600 3750
-Wire Wire Line
-	4600 3750 3000 3750
-Wire Wire Line
-	1500 1950 1650 1950
-Wire Wire Line
-	6600 1700 6600 1950
-$Comp
-L Device:C C21
-U 1 1 5ED2D13F
-P 7000 2850
-F 0 "C21" H 7115 2896 50  0000 L CNN
-F 1 "100nF" H 7115 2805 50  0000 L CNN
-F 2 "ValTronix:C_1206" H 7038 2700 50  0001 C CNN
-F 3 "~" H 7000 2850 50  0001 C CNN
-	1    7000 2850
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7000 1950 7000 2700
-Wire Wire Line
-	7000 3000 7000 3750
-Wire Wire Line
-	7400 1950 7350 1950
-Wire Wire Line
-	7700 2250 7700 3750
-Connection ~ 7700 3750
-Wire Wire Line
-	3000 3000 3000 3750
-Connection ~ 3000 3750
-Wire Wire Line
-	3000 3750 2300 3750
-Wire Wire Line
-	2300 3000 2300 3750
-Connection ~ 2300 3750
-Wire Wire Line
-	2300 3750 1650 3750
-Wire Wire Line
-	2300 2700 2300 1950
-Wire Wire Line
-	2300 1950 2050 1950
-Wire Wire Line
-	3250 1950 3000 1950
-Wire Wire Line
-	3000 2700 3000 1950
-Wire Wire Line
-	3000 1950 2800 1950
-Wire Wire Line
-	2500 1950 2300 1950
-Connection ~ 2300 1950
-Connection ~ 3000 1950
-$Comp
-L Device:CP C22
-U 1 1 5ED39455
-P 8450 2850
-F 0 "C22" H 8568 2941 50  0000 L CNN
-F 1 "10µF" H 8568 2850 50  0000 L CNN
-F 2 "ValTronix:CP_Elec_4x5.7" H 8488 2700 50  0001 C CNN
-F 3 "~" H 8450 2850 50  0001 C CNN
-F 4 "16V" H 8568 2759 50  0000 L CNN "Voltage"
-	1    8450 2850
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8450 1950 8450 2700
-Wire Wire Line
-	8450 3000 8450 3750
-$Comp
-L Device:C C23
-U 1 1 5ED39461
-P 9200 2850
-F 0 "C23" H 9315 2896 50  0000 L CNN
-F 1 "100nF" H 9315 2805 50  0000 L CNN
-F 2 "ValTronix:C_1206" H 9238 2700 50  0001 C CNN
-F 3 "~" H 9200 2850 50  0001 C CNN
-	1    9200 2850
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9200 1950 9200 2700
-Wire Wire Line
-	9200 3000 9200 3750
-Wire Wire Line
-	8000 1950 8150 1950
-Connection ~ 8450 1950
-Wire Wire Line
-	8450 1950 9200 1950
-Connection ~ 9200 1950
-Wire Wire Line
-	9200 1950 9400 1950
-Text HLabel 10600 5000 2    50   Output ~ 0
-3V3A
-$Comp
-L Device:CP C24
-U 1 1 5ED3D45D
-P 8650 5350
-F 0 "C24" H 8768 5441 50  0000 L CNN
-F 1 "10µF" H 8768 5350 50  0000 L CNN
-F 2 "ValTronix:CP_Elec_4x5.7" H 8688 5200 50  0001 C CNN
-F 3 "~" H 8650 5350 50  0001 C CNN
-F 4 "16V" H 8768 5259 50  0000 L CNN "Voltage"
-	1    8650 5350
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8650 5000 8650 5200
-Wire Wire Line
-	8650 5500 8650 5700
-$Comp
-L Device:C C25
-U 1 1 5ED3D469
-P 9400 5350
-F 0 "C25" H 9515 5396 50  0000 L CNN
-F 1 "100nF" H 9515 5305 50  0000 L CNN
-F 2 "ValTronix:C_0805" H 9438 5200 50  0001 C CNN
-F 3 "~" H 9400 5350 50  0001 C CNN
-	1    9400 5350
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9400 5000 9400 5200
-Wire Wire Line
-	9400 5500 9400 5700
-Connection ~ 9400 5000
-Wire Wire Line
-	9400 5000 8650 5000
-$Comp
-L Device:R R27
-U 1 1 5ED41B09
-P 7900 5000
-F 0 "R27" V 7693 5000 50  0000 C CNN
-F 1 "10" V 7784 5000 50  0000 C CNN
-F 2 "ValTronix:R_0805" V 7830 5000 50  0001 C CNN
-F 3 "~" H 7900 5000 50  0001 C CNN
-	1    7900 5000
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	8050 5000 8300 5000
-Connection ~ 8650 5000
-Wire Wire Line
-	7250 5000 7750 5000
-Text Label 7250 5000 0    50   ~ 0
-3V3D
-Wire Wire Line
-	7250 5700 7800 5700
-Connection ~ 8650 5700
-Text Label 7050 1950 0    50   ~ 0
-5V
-Text Label 4200 1950 0    50   ~ 0
-S
-Text Label 3100 1950 0    50   ~ 0
-D
-Text Label 2150 1950 0    50   ~ 0
-LCC
-Text Label 1600 1950 0    50   ~ 0
-LRF
-$Comp
-L ValTronix:FS01xxMA D4
-U 1 1 5ED5484D
-P 5150 6800
-F 0 "D4" H 5238 6846 50  0000 L CNN
-F 1 "FS0103MA" H 5238 6755 50  0000 L CNN
-F 2 "ValTronix:TO-92_Inline_Narrow_Oval" V 5150 6800 50  0001 C CNN
-F 3 "https://docs-emea.rs-online.com/webdocs/150e/0900766b8150e21a.pdf" V 5150 6800 50  0001 C CNN
-	1    5150 6800
-	1    0    0    -1  
-$EndComp
-$Comp
-L ValTronix:1N4007 D3
-U 1 1 5ED55313
-P 7700 1500
-F 0 "D3" H 7700 1717 50  0000 C CNN
-F 1 "1N4007" H 7700 1626 50  0000 C CNN
-F 2 "ValTronix:D_DO-41_SOD81_P10.16mm_Horizontal" H 7700 1325 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 7700 1500 50  0001 C CNN
-	1    7700 1500
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8150 1950 8150 1500
-Wire Wire Line
-	8150 1500 7850 1500
-Connection ~ 8150 1950
-Wire Wire Line
-	8150 1950 8450 1950
-Wire Wire Line
-	7550 1500 7250 1500
-Wire Wire Line
-	7250 1500 7250 1950
-Connection ~ 7250 1950
-Wire Wire Line
-	7250 1950 7000 1950
-$Comp
-L Device:R R33
-U 1 1 5ED59A87
-P 4250 7150
-F 0 "R33" H 4180 7104 50  0000 R CNN
-F 1 "470" H 4180 7195 50  0000 R CNN
-F 2 "ValTronix:R_0805" V 4180 7150 50  0001 C CNN
-F 3 "~" H 4250 7150 50  0001 C CNN
-	1    4250 7150
+L Device:C C?
+U 1 1 60B0C40B
+P 9500 3350
+AR Path="/60B0C40B" Ref="C?"  Part="1" 
+AR Path="/60ABEC6B/60B0C40B" Ref="C15"  Part="1" 
+F 0 "C15" H 9614 3304 50  0000 L CNN
+F 1 "100nF" H 9614 3395 50  0000 L CNN
+F 2 "ValTronix:C_0603" H 9538 3200 50  0001 C CNN
+F 3 "~" H 9500 3350 50  0001 C CNN
+F 4 "08055C104KAT2A" H 9500 3350 50  0001 C CNN "Part"
+	1    9500 3350
 	-1   0    0    1   
 $EndComp
 $Comp
-L Device:R R30
-U 1 1 5ED5B4AB
-P 1350 7150
-F 0 "R30" H 1280 7059 50  0000 R CNN
-F 1 "30k" H 1280 7150 50  0000 R CNN
-F 2 "ValTronix:R_0805" V 1280 7150 50  0001 C CNN
-F 3 "~" H 1350 7150 50  0001 C CNN
-F 4 "1%" H 1280 7241 50  0000 R CNN "Precision"
-	1    1350 7150
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:R R29
-U 1 1 5ED5BAAE
-P 1350 6450
-F 0 "R29" H 1280 6359 50  0000 R CNN
-F 1 "12k" H 1280 6450 50  0000 R CNN
-F 2 "ValTronix:R_0805" V 1280 6450 50  0001 C CNN
-F 3 "~" H 1350 6450 50  0001 C CNN
-F 4 "1%" H 1280 6541 50  0000 R CNN "Precision"
-	1    1350 6450
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	1350 6600 1350 6800
-Connection ~ 1350 6800
-Wire Wire Line
-	1350 6800 1350 7000
-Wire Wire Line
-	1350 6300 1350 6200
-Wire Wire Line
-	1350 6200 900  6200
-Text Label 900  6200 0    50   ~ 0
-3V3D
-Text Label 1450 6800 0    50   ~ 0
-Cr2V5
-Wire Wire Line
-	1350 7400 1350 7300
-Wire Wire Line
-	1350 7400 900  7400
-Text Label 900  7400 0    50   ~ 0
-N
-Wire Wire Line
-	1350 7400 2750 7400
-Wire Wire Line
-	2750 7400 2750 7100
-Connection ~ 1350 7400
-Wire Wire Line
-	5150 6950 5150 7400
-Wire Wire Line
-	5150 7400 4250 7400
-Connection ~ 2750 7400
-Wire Wire Line
-	5150 6200 5150 6650
-$Comp
-L Device:R R31
-U 1 1 5ED6E0A4
-P 2750 6450
-F 0 "R31" H 2680 6404 50  0000 R CNN
-F 1 "1k" H 2680 6495 50  0000 R CNN
-F 2 "ValTronix:R_0805" V 2680 6450 50  0001 C CNN
-F 3 "~" H 2750 6450 50  0001 C CNN
-	1    2750 6450
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:R R32
-U 1 1 5ED7284F
-P 3200 6650
-F 0 "R32" V 3407 6650 50  0000 C CNN
-F 1 "470" V 3316 6650 50  0000 C CNN
-F 2 "ValTronix:R_0805" V 3130 6650 50  0001 C CNN
-F 3 "~" H 3200 6650 50  0001 C CNN
-	1    3200 6650
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	3050 6650 2750 6650
-Wire Wire Line
-	2750 6650 2750 6600
-Wire Wire Line
-	3650 6650 3350 6650
-$Comp
-L Device:C C26
-U 1 1 5ED7B6F6
-P 3650 6450
-F 0 "C26" H 3765 6496 50  0000 L CNN
-F 1 "33nF" H 3765 6405 50  0000 L CNN
-F 2 "ValTronix:C_0805" H 3688 6300 50  0001 C CNN
-F 3 "~" H 3650 6450 50  0001 C CNN
-	1    3650 6450
+L power:VCC #PWR?
+U 1 1 60B0C411
+P 9500 2950
+AR Path="/60B0C411" Ref="#PWR?"  Part="1" 
+AR Path="/60ABEC6B/60B0C411" Ref="#PWR055"  Part="1" 
+F 0 "#PWR055" H 9500 2800 50  0001 C CNN
+F 1 "VCC" H 9515 3123 50  0000 C CNN
+F 2 "" H 9500 2950 50  0001 C CNN
+F 3 "" H 9500 2950 50  0001 C CNN
+	1    9500 2950
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4250 6450 4250 6200
-Wire Wire Line
-	4250 6200 3650 6200
-Connection ~ 1350 6200
-Wire Wire Line
-	3650 6300 3650 6200
-Connection ~ 3650 6200
-Wire Wire Line
-	3650 6200 2750 6200
-Wire Wire Line
-	2750 6300 2750 6200
-Connection ~ 2750 6200
-Wire Wire Line
-	2750 6200 1350 6200
-Wire Wire Line
-	3650 6600 3650 6650
-Wire Wire Line
-	3650 6650 3950 6650
-Connection ~ 3650 6650
-Wire Wire Line
-	4250 6850 4250 6900
-Wire Wire Line
-	4250 7300 4250 7400
-Connection ~ 4250 7400
-Wire Wire Line
-	4250 7400 2750 7400
-Wire Wire Line
-	5000 6900 4250 6900
-Connection ~ 4250 6900
-Wire Wire Line
-	4250 6900 4250 7000
-Wire Wire Line
-	2750 6900 2750 6800
-Connection ~ 2750 6650
 $Comp
-L power:PWR_FLAG #FLG03
-U 1 1 5F0B86EB
-P 8300 4800
-F 0 "#FLG03" H 8300 4875 50  0001 C CNN
-F 1 "PWR_FLAG" H 8300 4973 50  0000 C CNN
-F 2 "" H 8300 4800 50  0001 C CNN
-F 3 "~" H 8300 4800 50  0001 C CNN
-	1    8300 4800
+L power:GND #PWR?
+U 1 1 60B0C417
+P 9500 3750
+AR Path="/60B0C417" Ref="#PWR?"  Part="1" 
+AR Path="/60ABEC6B/60B0C417" Ref="#PWR059"  Part="1" 
+F 0 "#PWR059" H 9500 3500 50  0001 C CNN
+F 1 "GND" H 9505 3577 50  0000 C CNN
+F 2 "" H 9500 3750 50  0001 C CNN
+F 3 "" H 9500 3750 50  0001 C CNN
+	1    9500 3750
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8300 4800 8300 5000
 $Comp
-L ValTronix:LED_0805 LD3
-U 1 1 5F47A943
-P 9950 3200
-F 0 "LD3" V 10034 3082 50  0000 R CNN
-F 1 "LED_0805" V 9943 3082 50  0000 R CNN
-F 2 "ValTronix:LED_0805" H 9950 3200 50  0001 C CNN
-F 3 "~" H 9950 3200 50  0001 C CNN
-F 4 "Green" V 9852 3082 50  0000 R CNN "Color"
-	1    9950 3200
-	0    -1   -1   0   
+L ValTronix:74LVC1G14 U?
+U 2 1 60B0C421
+P 1300 6900
+AR Path="/60B0C421" Ref="U?"  Part="2" 
+AR Path="/60ABEC6B/60B0C421" Ref="U3"  Part="2" 
+F 0 "U3" H 1223 6946 50  0000 R CNN
+F 1 "74LVC1G14" H 1223 6855 50  0000 R CNN
+F 2 "ValTronix:SOT-25" H 1250 6850 50  0001 C CNN
+F 3 "https://www.diodes.com/assets/Datasheets/74LVC1G14.pdf" H 1250 6850 50  0001 C CNN
+	2    1300 6900
+	-1   0    0    -1  
 $EndComp
-$Comp
-L Device:R R24
-U 1 1 5F47B4AC
-P 9950 2450
-F 0 "R24" H 10020 2496 50  0000 L CNN
-F 1 "1k" H 10020 2405 50  0000 L CNN
-F 2 "ValTronix:R_0805" V 9880 2450 50  0001 C CNN
-F 3 "~" H 9950 2450 50  0001 C CNN
-	1    9950 2450
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9950 3050 9950 2600
-Wire Wire Line
-	9950 2300 9950 1950
-$Comp
-L Connector:TestPoint_Alt TP18
-U 1 1 5ED6DF24
-P 9400 3650
-F 0 "TP18" H 9458 3768 50  0000 L CNN
-F 1 "GNDD" H 9458 3677 50  0000 L CNN
-F 2 "Measurement_Points:Measurement_Point_Round-TH_Big" H 9600 3650 50  0001 C CNN
-F 3 "~" H 9600 3650 50  0001 C CNN
-	1    9400 3650
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9400 3650 9400 3750
-Wire Wire Line
-	8450 3750 9200 3750
-Wire Wire Line
-	9200 3750 9400 3750
-$Comp
-L Connector:TestPoint TP14
-U 1 1 5ED9E759
-P 1950 1050
-F 0 "TP14" H 2008 1168 50  0000 L CNN
-F 1 "Vz" H 2008 1077 50  0000 L CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2150 1050 50  0001 C CNN
-F 3 "~" H 2150 1050 50  0001 C CNN
-	1    1950 1050
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1950 1050 1950 1150
-Connection ~ 1950 1150
-Wire Wire Line
-	1950 1150 2700 1150
-Text Label 4700 6900 0    50   ~ 0
-CrG
-Text Label 3800 6650 0    50   ~ 0
-CrB
-Wire Wire Line
-	1850 6800 1850 7000
-Wire Wire Line
-	1850 7000 2650 7000
-Wire Wire Line
-	1350 6800 1850 6800
-Wire Wire Line
-	2750 6800 2150 6800
-Wire Wire Line
-	2150 6800 2150 6700
-Connection ~ 2750 6800
-Wire Wire Line
-	2750 6800 2750 6650
-$Comp
-L Connector:TestPoint_Probe TP19
-U 1 1 5EDBE8C4
-P 2150 6700
-F 0 "TP19" H 2303 6801 50  0000 L CNN
-F 1 "Cr" H 2303 6710 50  0000 L CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2350 6700 50  0001 C CNN
-F 3 "~" H 2350 6700 50  0001 C CNN
-	1    2150 6700
-	1    0    0    -1  
-$EndComp
-Text Label 2550 6800 0    50   ~ 0
-Cr
-$Comp
-L Connector:TestPoint_Flag TP16
-U 1 1 5EDBF110
-P 9400 1700
-F 0 "TP16" H 9660 1794 50  0000 L CNN
-F 1 "+3V3D" H 9660 1703 50  0000 L CNN
-F 2 "Measurement_Points:Measurement_Point_Square-SMD-Pad_Big" H 9600 1700 50  0001 C CNN
-F 3 "~" H 9600 1700 50  0001 C CNN
-	1    9400 1700
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9400 1700 9400 1950
-Wire Wire Line
-	9400 5000 10000 5000
-$Comp
-L Connector:TestPoint_Flag TP10
-U 1 1 5EDC4719
-P 10000 4750
-F 0 "TP10" H 10260 4844 50  0000 L CNN
-F 1 "+3V3A" H 10260 4753 50  0000 L CNN
-F 2 "Measurement_Points:Measurement_Point_Square-SMD-Pad_Big" H 10200 4750 50  0001 C CNN
-F 3 "~" H 10200 4750 50  0001 C CNN
-	1    10000 4750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	10000 4750 10000 5000
-Connection ~ 10000 5000
-$Comp
-L Connector:TestPoint TP11
-U 1 1 5EDCF7C0
-P 1100 2250
-F 0 "TP11" H 1158 2368 50  0000 L CNN
-F 1 "L" H 1158 2277 50  0000 L CNN
-F 2 "Measurement_Points:Measurement_Point_Square-SMD-Pad_Small" H 1300 2250 50  0001 C CNN
-F 3 "~" H 1300 2250 50  0001 C CNN
-	1    1100 2250
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:TestPoint TP12
-U 1 1 5EDCFB9C
-P 1100 3450
-F 0 "TP12" H 1158 3568 50  0000 L CNN
-F 1 "N" H 1158 3477 50  0000 L CNN
-F 2 "Measurement_Points:Measurement_Point_Round-TH_Big" H 1300 3450 50  0001 C CNN
-F 3 "~" H 1300 3450 50  0001 C CNN
-	1    1100 3450
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1100 3450 1100 3750
-Text Notes 9950 2950 1    50   ~ 0
-1mA
-$Comp
-L power:PWR_FLAG #FLG04
-U 1 1 5F01E2CC
-P 7350 2200
-F 0 "#FLG04" H 7350 2275 50  0001 C CNN
-F 1 "PWR_FLAG" H 7350 2373 50  0000 C CNN
-F 2 "" H 7350 2200 50  0001 C CNN
-F 3 "~" H 7350 2200 50  0001 C CNN
-	1    7350 2200
-	-1   0    0    1   
-$EndComp
-Connection ~ 6600 1950
-Wire Wire Line
-	7350 2200 7350 1950
-$Comp
-L power:PWR_FLAG #FLG05
-U 1 1 5F04F510
-P 4100 1750
-F 0 "#FLG05" H 4100 1825 50  0001 C CNN
-F 1 "PWR_FLAG" H 4100 1923 50  0000 C CNN
-F 2 "" H 4100 1750 50  0001 C CNN
-F 3 "~" H 4100 1750 50  0001 C CNN
-	1    4100 1750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4100 1750 4100 1950
-Connection ~ 4100 1950
-Wire Wire Line
-	4100 1950 4350 1950
 $Comp
 L Device:R R?
-U 1 1 5F21AF4A
-P 1650 4600
-AR Path="/5F21AF4A" Ref="R?"  Part="1" 
-AR Path="/5ECFDCE6/5F21AF4A" Ref="R28"  Part="1" 
-F 0 "R28" V 1857 4600 50  0000 C CNN
-F 1 "33k" V 1766 4600 50  0000 C CNN
-F 2 "ValTronix:R_0805" V 1580 4600 50  0001 C CNN
-F 3 "~" H 1650 4600 50  0001 C CNN
-	1    1650 4600
-	0    1    -1   0   
+U 1 1 60B0C431
+P 10100 5050
+AR Path="/60B0C431" Ref="R?"  Part="1" 
+AR Path="/60ABEC6B/60B0C431" Ref="R12"  Part="1" 
+F 0 "R12" H 10170 5096 50  0000 L CNN
+F 1 "100k" H 10170 5005 50  0000 L CNN
+F 2 "ValTronix:R_0805" V 10030 5050 50  0001 C CNN
+F 3 "~" H 10100 5050 50  0001 C CNN
+	1    10100 5050
+	1    0    0    -1  
 $EndComp
-Text GLabel 2300 5000 2    50   Output ~ 0
-~RESET
 $Comp
-L ValTronix:BD48xxG U?
-U 1 1 5F21AF51
-P 1650 5050
-AR Path="/5F21AF51" Ref="U?"  Part="1" 
-AR Path="/5ECFDCE6/5F21AF51" Ref="U13"  Part="1" 
-F 0 "U13" H 1650 5381 50  0000 C CNN
-F 1 "BD4830G" H 1650 5290 50  0000 C CNN
-F 2 "ValTronix:SSOP-5_2.9x2.8mm_Pitch0.95mm" H 1650 4600 50  0001 C CNN
-F 3 "http://rohmfs.rohm.com/en/products/databook/datasheet/ic/power/voltage_detector/bd48xxg-e.pdf" H 1650 5050 50  0001 C CNN
-	1    1650 5050
+L power:VCC #PWR?
+U 1 1 60B0C437
+P 10100 4800
+AR Path="/60B0C437" Ref="#PWR?"  Part="1" 
+AR Path="/60ABEC6B/60B0C437" Ref="#PWR033"  Part="1" 
+F 0 "#PWR033" H 10100 4650 50  0001 C CNN
+F 1 "VCC" H 10115 4973 50  0000 C CNN
+F 2 "" H 10100 4800 50  0001 C CNN
+F 3 "" H 10100 4800 50  0001 C CNN
+	1    10100 4800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10100 4800 10100 4900
+$Comp
+L ValTronix:74LVC1G14 U?
+U 2 1 60B0C456
+P 2550 6900
+AR Path="/60B0C456" Ref="U?"  Part="2" 
+AR Path="/60ABEC6B/60B0C456" Ref="U5"  Part="2" 
+F 0 "U5" H 2473 6946 50  0000 R CNN
+F 1 "74LVC1G14" H 2473 6855 50  0000 R CNN
+F 2 "ValTronix:SOT-25" H 2500 6850 50  0001 C CNN
+F 3 "https://www.diodes.com/assets/Datasheets/74LVC1G14.pdf" H 2500 6850 50  0001 C CNN
+	2    2550 6900
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 60B19382
+P 10100 1200
+AR Path="/60B19382" Ref="#PWR?"  Part="1" 
+AR Path="/60ABEC6B/60B19382" Ref="#PWR036"  Part="1" 
+F 0 "#PWR036" H 10100 1050 50  0001 C CNN
+F 1 "VCC" H 10115 1373 50  0000 C CNN
+F 2 "" H 10100 1200 50  0001 C CNN
+F 3 "" H 10100 1200 50  0001 C CNN
+	1    10100 1200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG?
+U 1 1 60B1938A
+P 9350 1500
+AR Path="/60B1938A" Ref="#FLG?"  Part="1" 
+AR Path="/60ABEC6B/60B1938A" Ref="#FLG06"  Part="1" 
+F 0 "#FLG06" H 9350 1575 50  0001 C CNN
+F 1 "PWR_FLAG" V 9350 1627 50  0000 L CNN
+F 2 "" H 9350 1500 50  0001 C CNN
+F 3 "~" H 9350 1500 50  0001 C CNN
+	1    9350 1500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG?
+U 1 1 60B19390
+P 10250 1450
+AR Path="/60B19390" Ref="#FLG?"  Part="1" 
+AR Path="/60ABEC6B/60B19390" Ref="#FLG07"  Part="1" 
+F 0 "#FLG07" H 10250 1525 50  0001 C CNN
+F 1 "PWR_FLAG" V 10250 1578 50  0000 L CNN
+F 2 "" H 10250 1450 50  0001 C CNN
+F 3 "~" H 10250 1450 50  0001 C CNN
+	1    10250 1450
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 60B19396
+P 6250 1750
+AR Path="/60B19396" Ref="R?"  Part="1" 
+AR Path="/60ABEC6B/60B19396" Ref="R15"  Part="1" 
+F 0 "R15" H 6180 1704 50  0000 R CNN
+F 1 "1k" H 6180 1795 50  0000 R CNN
+F 2 "ValTronix:R_0805" V 6180 1750 50  0001 C CNN
+F 3 "~" H 6250 1750 50  0001 C CNN
+	1    6250 1750
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 60B1939C
+P 6250 1500
+AR Path="/60B1939C" Ref="#PWR?"  Part="1" 
+AR Path="/60ABEC6B/60B1939C" Ref="#PWR040"  Part="1" 
+F 0 "#PWR040" H 6250 1350 50  0001 C CNN
+F 1 "VCC" H 6265 1673 50  0000 C CNN
+F 2 "" H 6250 1500 50  0001 C CNN
+F 3 "" H 6250 1500 50  0001 C CNN
+	1    6250 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP?
+U 1 1 60B193A3
+P 9500 1250
+AR Path="/60B193A3" Ref="TP?"  Part="1" 
+AR Path="/60ABEC6B/60B193A3" Ref="TP7"  Part="1" 
+F 0 "TP7" H 9500 1575 50  0000 C CNN
+F 1 "GND" H 9500 1484 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-TH_Big" H 9700 1250 50  0001 C CNN
+F 3 "~" H 9700 1250 50  0001 C CNN
+	1    9500 1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60B193A9
+P 9500 1750
+AR Path="/60B193A9" Ref="#PWR?"  Part="1" 
+AR Path="/60ABEC6B/60B193A9" Ref="#PWR038"  Part="1" 
+F 0 "#PWR038" H 9500 1500 50  0001 C CNN
+F 1 "GND" H 9505 1577 50  0000 C CNN
+F 2 "" H 9500 1750 50  0001 C CNN
+F 3 "" H 9500 1750 50  0001 C CNN
+	1    9500 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9500 1250 9500 1500
+$Comp
+L Connector:TestPoint TP?
+U 1 1 60B193B0
+P 10100 1700
+AR Path="/60B193B0" Ref="TP?"  Part="1" 
+AR Path="/60ABEC6B/60B193B0" Ref="TP15"  Part="1" 
+F 0 "TP15" H 10100 1933 50  0000 C CNN
+F 1 "VCC" H 10100 2024 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Square-SMD-Pad_Big" H 10300 1700 50  0001 C CNN
+F 3 "~" H 10300 1700 50  0001 C CNN
+	1    10100 1700
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	10100 1700 10100 1450
+Wire Wire Line
+	10250 1450 10100 1450
+Connection ~ 10100 1450
+Wire Wire Line
+	10100 1450 10100 1200
+Wire Wire Line
+	9350 1500 9500 1500
+Connection ~ 9500 1500
+Wire Wire Line
+	9500 1500 9500 1750
+$Comp
+L power:GNDD #PWR?
+U 1 1 60B63247
+P 3900 5950
+AR Path="/60B63247" Ref="#PWR?"  Part="1" 
+AR Path="/60ABEC6B/60B63247" Ref="#PWR063"  Part="1" 
+F 0 "#PWR063" H 3900 5700 50  0001 C CNN
+F 1 "GNDD" H 3904 5795 50  0000 C CNN
+F 2 "" H 3900 5950 50  0001 C CNN
+F 3 "" H 3900 5950 50  0001 C CNN
+	1    3900 5950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1300 6600 1300 6500
+Wire Wire Line
+	1300 6500 1150 6500
+Wire Wire Line
+	1000 6500 1000 6750
+Wire Wire Line
+	1300 7200 1300 7300
+Wire Wire Line
+	1300 7300 1150 7300
+Wire Wire Line
+	1000 7300 1000 7050
+Wire Wire Line
+	1150 7450 1150 7300
+Connection ~ 1150 7300
+Wire Wire Line
+	1150 7300 1000 7300
+Wire Wire Line
+	1150 6350 1150 6500
+Connection ~ 1150 6500
+Wire Wire Line
+	1150 6500 1000 6500
+$Comp
+L power:GNDD #PWR?
+U 1 1 60B6F9C6
+P 1150 7450
+AR Path="/60B6F9C6" Ref="#PWR?"  Part="1" 
+AR Path="/60ABEC6B/60B6F9C6" Ref="#PWR068"  Part="1" 
+F 0 "#PWR068" H 1150 7200 50  0001 C CNN
+F 1 "GNDD" H 1154 7295 50  0000 C CNN
+F 2 "" H 1150 7450 50  0001 C CNN
+F 3 "" H 1150 7450 50  0001 C CNN
+	1    1150 7450
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:+3.3V #PWR?
-U 1 1 5F21AF57
-P 900 4600
-AR Path="/5F21AF57" Ref="#PWR?"  Part="1" 
-AR Path="/5ECFDCE6/5F21AF57" Ref="#PWR01"  Part="1" 
-F 0 "#PWR01" H 900 4450 50  0001 C CNN
-F 1 "+3.3V" H 915 4773 50  0000 C CNN
-F 2 "" H 900 4600 50  0001 C CNN
-F 3 "" H 900 4600 50  0001 C CNN
-	1    900  4600
+U 1 1 60B6F9CC
+P 1150 6350
+AR Path="/60B6F9CC" Ref="#PWR?"  Part="1" 
+AR Path="/60ABEC6B/60B6F9CC" Ref="#PWR064"  Part="1" 
+F 0 "#PWR064" H 1150 6200 50  0001 C CNN
+F 1 "+3.3V" H 1165 6523 50  0000 C CNN
+F 2 "" H 1150 6350 50  0001 C CNN
+F 3 "" H 1150 6350 50  0001 C CNN
+	1    1150 6350
 	1    0    0    -1  
 $EndComp
+$Comp
+L Device:C C?
+U 1 1 60B6F9D2
+P 1000 6900
+AR Path="/60B6F9D2" Ref="C?"  Part="1" 
+AR Path="/60ABEC6B/60B6F9D2" Ref="C28"  Part="1" 
+F 0 "C28" H 886 6946 50  0000 R CNN
+F 1 "100nF" H 886 6855 50  0000 R CNN
+F 2 "ValTronix:C_0603" H 1038 6750 50  0001 C CNN
+F 3 "~" H 1000 6900 50  0001 C CNN
+	1    1000 6900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 2950 7650 2950
+Wire Wire Line
+	5650 3150 7650 3150
+Wire Wire Line
+	5650 3800 7650 3800
+Wire Wire Line
+	5650 4000 7650 4000
+Wire Wire Line
+	5650 4650 7650 4650
+Wire Wire Line
+	5650 4850 7650 4850
+Text HLabel 7650 2950 2    50   UnSpc ~ 0
+D0_P
+Text HLabel 7650 3150 2    50   UnSpc ~ 0
+D0_N
+Text HLabel 7650 3800 2    50   UnSpc ~ 0
+D1_P
+Text HLabel 7650 4000 2    50   UnSpc ~ 0
+D1_N
+Text HLabel 7650 4650 2    50   UnSpc ~ 0
+D3_P
+Text HLabel 7650 4850 2    50   UnSpc ~ 0
+D3_N
+Text HLabel 7650 5500 2    50   Input ~ 0
+~RST
+Text HLabel 7650 1050 2    50   Input ~ 0
+RXD
+Text HLabel 7650 2000 2    50   Output ~ 0
+TXD
+Wire Wire Line
+	5650 5500 5850 5500
+Wire Wire Line
+	6250 1900 6250 2000
+Wire Wire Line
+	6250 1600 6250 1500
+Wire Wire Line
+	10100 5200 10100 5300
+$Comp
+L Device:C C?
+U 1 1 60CFCA25
+P 10100 3350
+AR Path="/60CFCA25" Ref="C?"  Part="1" 
+AR Path="/60ABEC6B/60CFCA25" Ref="C14"  Part="1" 
+F 0 "C14" H 9985 3304 50  0000 R CNN
+F 1 "100nF" H 9985 3395 50  0000 R CNN
+F 2 "ValTronix:C_0805" H 10138 3200 50  0001 C CNN
+F 3 "~" H 10100 3350 50  0001 C CNN
+F 4 "08055C104KAT2A" H 10100 3350 50  0001 C CNN "Part"
+	1    10100 3350
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 60CFCA3D
+P 10100 2950
+AR Path="/60CFCA3D" Ref="#PWR?"  Part="1" 
+AR Path="/60ABEC6B/60CFCA3D" Ref="#PWR047"  Part="1" 
+F 0 "#PWR047" H 10100 2800 50  0001 C CNN
+F 1 "VCC" H 10115 3123 50  0000 C CNN
+F 2 "" H 10100 2950 50  0001 C CNN
+F 3 "" H 10100 2950 50  0001 C CNN
+	1    10100 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60CFCA47
+P 10100 3750
+AR Path="/60CFCA47" Ref="#PWR?"  Part="1" 
+AR Path="/60ABEC6B/60CFCA47" Ref="#PWR050"  Part="1" 
+F 0 "#PWR050" H 10100 3500 50  0001 C CNN
+F 1 "GND" H 10105 3577 50  0000 C CNN
+F 2 "" H 10100 3750 50  0001 C CNN
+F 3 "" H 10100 3750 50  0001 C CNN
+	1    10100 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10100 2950 10100 3200
+Wire Wire Line
+	10100 3500 10100 3750
+$Comp
+L Device:R R?
+U 1 1 60D1D2ED
+P 9500 5050
+AR Path="/60D1D2ED" Ref="R?"  Part="1" 
+AR Path="/60ABEC6B/60D1D2ED" Ref="R36"  Part="1" 
+F 0 "R36" H 9570 5096 50  0000 L CNN
+F 1 "100k" H 9570 5005 50  0000 L CNN
+F 2 "ValTronix:R_0805" V 9430 5050 50  0001 C CNN
+F 3 "~" H 9500 5050 50  0001 C CNN
+	1    9500 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 60D1D303
+P 9500 4800
+AR Path="/60D1D303" Ref="#PWR?"  Part="1" 
+AR Path="/60ABEC6B/60D1D303" Ref="#PWR057"  Part="1" 
+F 0 "#PWR057" H 9500 4650 50  0001 C CNN
+F 1 "VCC" H 9515 4973 50  0000 C CNN
+F 2 "" H 9500 4800 50  0001 C CNN
+F 3 "" H 9500 4800 50  0001 C CNN
+	1    9500 4800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9500 4800 9500 4900
+Wire Wire Line
+	9500 5200 9500 5300
+Connection ~ 6250 2000
+Wire Wire Line
+	6250 2000 7650 2000
+Wire Wire Line
+	5750 2000 6250 2000
+Wire Wire Line
+	4200 1900 4450 1900
+Wire Wire Line
+	2550 6600 2550 6500
+Wire Wire Line
+	2550 6500 2400 6500
+Wire Wire Line
+	2250 6500 2250 6750
+Wire Wire Line
+	2550 7200 2550 7300
+Wire Wire Line
+	2550 7300 2400 7300
+Wire Wire Line
+	2250 7300 2250 7050
+Wire Wire Line
+	2400 7450 2400 7300
+Connection ~ 2400 7300
+Wire Wire Line
+	2400 7300 2250 7300
+Wire Wire Line
+	2400 6350 2400 6500
+Connection ~ 2400 6500
+Wire Wire Line
+	2400 6500 2250 6500
 $Comp
 L power:GNDD #PWR?
-U 1 1 5F21AF5D
-P 1650 5400
-AR Path="/5F21AF5D" Ref="#PWR?"  Part="1" 
-AR Path="/5ECFDCE6/5F21AF5D" Ref="#PWR04"  Part="1" 
-F 0 "#PWR04" H 1650 5150 50  0001 C CNN
-F 1 "GNDD" H 1654 5245 50  0000 C CNN
-F 2 "" H 1650 5400 50  0001 C CNN
-F 3 "" H 1650 5400 50  0001 C CNN
-	1    1650 5400
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	900  4600 900  5000
-Wire Wire Line
-	1650 5400 1650 5300
-Wire Wire Line
-	2000 5000 2150 5000
-Wire Wire Line
-	1800 4600 2150 4600
-Wire Wire Line
-	2150 4600 2150 4800
-Connection ~ 2150 5000
-Wire Wire Line
-	2150 5000 2300 5000
-Wire Wire Line
-	900  5000 1100 5000
-Wire Wire Line
-	1500 4600 1100 4600
-Wire Wire Line
-	1100 4600 1100 5000
-Connection ~ 1100 5000
-Wire Wire Line
-	1100 5000 1300 5000
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5F21AF6F
-P 2300 4700
-AR Path="/5F21AF6F" Ref="TP?"  Part="1" 
-AR Path="/5ECFDCE6/5F21AF6F" Ref="TP2"  Part="1" 
-F 0 "TP2" H 2358 4824 50  0000 L CNN
-F 1 "~RESET" H 2358 4726 50  0000 L CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2500 4700 50  0001 C CNN
-F 3 "~" H 2500 4700 50  0001 C CNN
-	1    2300 4700
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2300 4700 2300 4800
-Wire Wire Line
-	2300 4800 2150 4800
-Connection ~ 2150 4800
-Wire Wire Line
-	2150 4800 2150 5000
-$Comp
-L Reference_Voltage:TL431DBZ U9
-U 1 1 5F2E36F0
-P 2750 7000
-F 0 "U9" V 2796 6930 50  0000 R CNN
-F 1 "TL431DBZ" V 2705 6930 50  0000 R CNN
-F 2 "ValTronix:SOT-23" H 2750 6850 50  0001 C CIN
-F 3 "http://www.ti.com/lit/ds/symlink/tl431.pdf" H 2750 7000 50  0001 C CIN
-	1    2750 7000
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Connector_Generic:Conn_01x02 J7
-U 1 1 5EE172D0
-P 6050 5100
-F 0 "J7" H 6130 5092 50  0000 L CNN
-F 1 "3V3" H 6130 5001 50  0000 L CNN
-F 2 "ValTronix:Pin_Header_Straight_1x02_Pitch2.54mm" H 6050 5100 50  0001 C CNN
-F 3 "~" H 6050 5100 50  0001 C CNN
-	1    6050 5100
+U 1 1 60D5B6A4
+P 2400 7450
+AR Path="/60D5B6A4" Ref="#PWR?"  Part="1" 
+AR Path="/60ABEC6B/60D5B6A4" Ref="#PWR069"  Part="1" 
+F 0 "#PWR069" H 2400 7200 50  0001 C CNN
+F 1 "GNDD" H 2404 7295 50  0000 C CNN
+F 2 "" H 2400 7450 50  0001 C CNN
+F 3 "" H 2400 7450 50  0001 C CNN
+	1    2400 7450
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector_Generic:Conn_01x02 J6
-U 1 1 5EE17B5B
-P 6050 4750
-F 0 "J6" H 6130 4742 50  0000 L CNN
-F 1 "5V" H 6130 4651 50  0000 L CNN
-F 2 "ValTronix:Pin_Header_Straight_1x02_Pitch2.54mm" H 6050 4750 50  0001 C CNN
-F 3 "~" H 6050 4750 50  0001 C CNN
-	1    6050 4750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5500 4850 5850 4850
-Text Label 5500 4850 0    50   ~ 0
-N
-Wire Wire Line
-	5500 5200 5850 5200
-Wire Wire Line
-	5500 5100 5850 5100
-Wire Wire Line
-	5500 4750 5850 4750
-Text Label 5500 4750 0    50   ~ 0
-5V
-Text Label 5500 5100 0    50   ~ 0
-3V3D
-$Comp
-L ValTronix:MOV-10DxxxK MOV1
-U 1 1 5EE3405F
-P 1650 2850
-F 0 "MOV1" H 1480 2903 59  0000 R CNN
-F 1 "MOV-10D420K" H 1480 2798 59  0000 R CNN
-F 2 "ValTronix:RV_Disc_D12_W4.5_P7.5" H 1650 2850 50  0001 C CNN
-F 3 "https://www.bourns.com/docs/Product-Datasheets/MOV10D.pdf" H 1650 2850 50  0001 C CNN
-	1    1650 2850
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1650 3000 1650 3750
-Connection ~ 1650 3750
-Wire Wire Line
-	1650 3750 1100 3750
-Wire Wire Line
-	1650 2700 1650 1950
-Connection ~ 1650 1950
-Wire Wire Line
-	1650 1950 1750 1950
-Connection ~ 7350 1950
-Wire Wire Line
-	7350 1950 7250 1950
-Wire Wire Line
-	5450 1950 6000 1950
-$Comp
-L Device:CP C20
-U 1 1 5EF19D4E
-P 6500 2850
-F 0 "C20" H 6618 2941 50  0000 L CNN
-F 1 "47µF" H 6618 2850 50  0000 L CNN
-F 2 "ValTronix:CP_Elec_6.3x7.7" H 6538 2700 50  0001 C CNN
-F 3 "~" H 6500 2850 50  0001 C CNN
-F 4 "25V" H 6618 2759 50  0000 L CNN "Voltage"
-	1    6500 2850
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6500 1950 6500 2700
-Wire Wire Line
-	6500 3000 6500 3750
-Connection ~ 6500 1950
-Wire Wire Line
-	6500 1950 6600 1950
-Connection ~ 6500 3750
-Connection ~ 6000 1950
-Connection ~ 6000 3750
-Wire Wire Line
-	6000 3750 5450 3750
-Wire Wire Line
-	6000 3750 6500 3750
-Wire Wire Line
-	6000 1950 6100 1950
-Connection ~ 7000 1950
-Connection ~ 7000 3750
-Wire Wire Line
-	7000 3750 7250 3750
-Wire Wire Line
-	6500 3750 7000 3750
-Wire Wire Line
-	6600 1950 7000 1950
-$Comp
-L Device:L_Core_Ferrite L2
-U 1 1 5EF3106D
-P 6250 1950
-F 0 "L2" V 6565 1950 50  0000 C CNN
-F 1 "10µH" V 6474 1950 50  0000 C CNN
-F 2 "ValTronix:L_1210" H 6250 1950 50  0001 C CNN
-F 3 "https://docs.rs-online.com/3d04/0900766b803f0ad7.pdf" H 6250 1950 50  0001 C CNN
-F 4 "300mA" V 6383 1950 50  0000 C CNN "Current"
-F 5 "LQH32CN100K23L" V 6250 1950 50  0001 C CNN "Part"
-	1    6250 1950
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	6400 1950 6500 1950
-$Comp
-L power:GNDD #PWR?
-U 1 1 5EF6369A
-P 7250 5850
-AR Path="/5EF6369A" Ref="#PWR?"  Part="1" 
-AR Path="/5ECFDCE6/5EF6369A" Ref="#PWR026"  Part="1" 
-F 0 "#PWR026" H 7250 5600 50  0001 C CNN
-F 1 "GNDD" H 7254 5695 50  0000 C CNN
-F 2 "" H 7250 5850 50  0001 C CNN
-F 3 "" H 7250 5850 50  0001 C CNN
-	1    7250 5850
+L power:+3.3V #PWR?
+U 1 1 60D5B6AE
+P 2400 6350
+AR Path="/60D5B6AE" Ref="#PWR?"  Part="1" 
+AR Path="/60ABEC6B/60D5B6AE" Ref="#PWR065"  Part="1" 
+F 0 "#PWR065" H 2400 6200 50  0001 C CNN
+F 1 "+3.3V" H 2415 6523 50  0000 C CNN
+F 2 "" H 2400 6350 50  0001 C CNN
+F 3 "" H 2400 6350 50  0001 C CNN
+	1    2400 6350
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GNDA #PWR?
-U 1 1 5EF636A0
-P 10600 5850
-AR Path="/5EF636A0" Ref="#PWR?"  Part="1" 
-AR Path="/5ECFDCE6/5EF636A0" Ref="#PWR053"  Part="1" 
-F 0 "#PWR053" H 10600 5600 50  0001 C CNN
-F 1 "GNDA" H 10605 5677 50  0000 C CNN
-F 2 "" H 10600 5850 50  0001 C CNN
-F 3 "" H 10600 5850 50  0001 C CNN
-	1    10600 5850
+L Device:C C?
+U 1 1 60D5B6B8
+P 2250 6900
+AR Path="/60D5B6B8" Ref="C?"  Part="1" 
+AR Path="/60ABEC6B/60D5B6B8" Ref="C29"  Part="1" 
+F 0 "C29" H 2136 6946 50  0000 R CNN
+F 1 "100nF" H 2136 6855 50  0000 R CNN
+F 2 "ValTronix:C_0603" H 2288 6750 50  0001 C CNN
+F 3 "~" H 2250 6900 50  0001 C CNN
+	1    2250 6900
 	1    0    0    -1  
 $EndComp
+Text HLabel 1800 1150 0    50   Output ~ 0
+RX
+Wire Wire Line
+	1800 1150 4900 1150
+Wire Wire Line
+	1800 1900 3650 1900
+Text HLabel 1800 1900 0    50   Input ~ 0
+TX
+Text HLabel 1800 2950 0    50   Input ~ 0
+DIO0
+Text HLabel 1800 3800 0    50   Input ~ 0
+DIO1
+Text HLabel 1800 5050 0    50   Output ~ 0
+DIO3
+Wire Wire Line
+	1800 2950 3650 2950
+Wire Wire Line
+	1800 3800 3650 3800
+Wire Wire Line
+	1800 5050 3500 5050
 $Comp
-L Device:Ferrite_Bead_Small FB?
-U 1 1 5EF636A6
-P 7900 5700
-AR Path="/5EF636A6" Ref="FB?"  Part="1" 
-AR Path="/5ECFDCE6/5EF636A6" Ref="FB6"  Part="1" 
-F 0 "FB6" V 7663 5700 50  0000 C CNN
-F 1 "BLM18PG121SN1D" V 7754 5700 50  0000 C CNN
-F 2 "ValTronix:L_0805" V 7830 5700 50  0001 C CNN
-F 3 "~" H 7900 5700 50  0001 C CNN
-	1    7900 5700
-	0    1    1    0   
+L 74xGxx:74LVC2G14 U14
+U 1 1 60F0E524
+P 6600 1050
+F 0 "U14" H 6575 783 50  0000 C CNN
+F 1 "74LVC2G14" H 6575 874 50  0000 C CNN
+F 2 "ValTronix:SOT-363_SC-70-6" H 6600 1050 50  0001 C CNN
+F 3 "https://www.ti.com/lit/ds/symlink/sn74lvc2g14.pdf" H 6600 1050 50  0001 C CNN
+	1    6600 1050
+	-1   0    0    1   
 $EndComp
 $Comp
-L Device:Net-Tie_2 R?
-U 1 1 5EF636B0
-P 7350 3750
-AR Path="/5EF636B0" Ref="R?"  Part="1" 
-AR Path="/5ECFDCE6/5EF636B0" Ref="NT1"  Part="1" 
-F 0 "NT1" H 7350 3569 50  0000 C CNN
-F 1 "0" H 7350 3660 50  0000 C CNN
-F 2 "ValTronix:R_0805" V 7280 3750 50  0001 C CNN
-F 3 "~" H 7350 3750 50  0001 C CNN
-	1    7350 3750
+L 74xGxx:74LVC2G14 U14
+U 2 1 60F17E1E
+P 6600 5500
+F 0 "U14" H 6575 5233 50  0000 C CNN
+F 1 "74LVC2G14" H 6575 5324 50  0000 C CNN
+F 2 "ValTronix:SOT-363_SC-70-6" H 6600 5500 50  0001 C CNN
+F 3 "https://www.ti.com/lit/ds/symlink/sn74lvc2g14.pdf" H 6600 5500 50  0001 C CNN
+	2    6600 5500
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	7450 3750 7700 3750
-$Comp
-L power:GNDD #PWR?
-U 1 1 5EF8CB74
-P 10400 3900
-AR Path="/5EF8CB74" Ref="#PWR?"  Part="1" 
-AR Path="/5ECFDCE6/5EF8CB74" Ref="#PWR054"  Part="1" 
-F 0 "#PWR054" H 10400 3650 50  0001 C CNN
-F 1 "GNDD" H 10404 3745 50  0000 C CNN
-F 2 "" H 10400 3900 50  0001 C CNN
-F 3 "" H 10400 3900 50  0001 C CNN
-	1    10400 3900
-	1    0    0    -1  
-$EndComp
+	9500 2950 9500 3200
 Wire Wire Line
-	10400 3750 10400 3900
+	9500 3500 9500 3750
+Text Label 9200 5300 0    50   ~ 0
+~RST
 Wire Wire Line
-	8000 5700 8300 5700
+	6900 5500 7650 5500
 Wire Wire Line
-	7250 5700 7250 5850
+	9200 5300 9500 5300
 Wire Wire Line
-	9950 3350 9950 3750
-$Comp
-L power:GNDD #PWR?
-U 1 1 5F1AFB30
-P 5500 5400
-AR Path="/5F1AFB30" Ref="#PWR?"  Part="1" 
-AR Path="/5ECFDCE6/5F1AFB30" Ref="#PWR049"  Part="1" 
-F 0 "#PWR049" H 5500 5150 50  0001 C CNN
-F 1 "GNDD" H 5504 5245 50  0000 C CNN
-F 2 "" H 5500 5400 50  0001 C CNN
-F 3 "" H 5500 5400 50  0001 C CNN
-	1    5500 5400
-	1    0    0    -1  
-$EndComp
+	6150 5500 6350 5500
 Wire Wire Line
-	5500 5400 5500 5200
+	6900 1050 7650 1050
+Text Label 9800 5300 0    50   ~ 0
+~RXD
+Wire Wire Line
+	9800 5300 10100 5300
+Wire Notes Line width 10
+	5350 550  11150 550 
+Wire Notes Line width 10
+	11150 550  11150 6450
+Wire Notes Line width 10
+	11150 6450 5350 6450
+Text Notes 5400 6400 0    75   ~ 15
+Isolated inputs & outputs
 $Bitmap
 Pos 10850 6850
 Scale 1.000000
@@ -1706,208 +1828,8 @@ AC C1 64 EC 4C E5 94 EC C3 DB 0D 31 38 62 0C 9C 74 D2 49 3F FD E9 4F 99 59 30 73
 FF 01 8F 4F 77 EF A9 FD A8 35 00 00 00 00 49 45 4E 44 AE 42 60 82 
 EndData
 $EndBitmap
-$Comp
-L Graphic:SYM_Flash_Large SYM?
-U 1 1 5ED9435A
-P 8800 1250
-AR Path="/5ED9435A" Ref="SYM?"  Part="1" 
-AR Path="/5DFE5F9E/5ED9435A" Ref="SYM?"  Part="1" 
-AR Path="/5ECFDCE6/5ED9435A" Ref="SYM3"  Part="1" 
-F 0 "SYM3" H 8919 1274 50  0001 L CNN
-F 1 "230V" H 8919 1183 50  0000 L CNN
-F 2 "ValTronix:Symbol_HighVoltage_Silk" H 8790 1160 50  0001 C CNN
-F 3 "~" H 9200 1150 50  0001 C CNN
-	1    8800 1250
-	1    0    0    -1  
-$EndComp
-Text Label 5650 1950 0    50   ~ 0
-S+
-$Comp
-L Device:CP C16
-U 1 1 5EF973F7
-P 2300 2850
-F 0 "C16" H 2418 2941 50  0000 L CNN
-F 1 "4.7µF" H 2418 2850 50  0000 L CNN
-F 2 "ValTronix:CP_Radial_D10.0mm_P5.00mm" H 2338 2700 50  0001 C CNN
-F 3 "https://docs.rs-online.com/8fad/0900766b813c76c1.pdf" H 2300 2850 50  0001 C CNN
-F 4 "400V" H 2418 2759 50  0000 L CNN "Voltage"
-F 5 "ULD2G4R7MPD" H 2300 2850 50  0001 C CNN "Part"
-	1    2300 2850
-	1    0    0    -1  
-$EndComp
-Text Notes 11000 1850 2    50   ~ 0
-2.9V-3.6V garanteed
-Wire Wire Line
-	3550 1150 3550 1650
-Wire Wire Line
-	3750 950  4350 950 
-Wire Wire Line
-	4250 6200 5150 6200
-Connection ~ 4250 6200
-$Comp
-L ValTronix:SMBJxxA D5
-U 1 1 5F014A78
-P 6250 6800
-F 0 "D5" V 6204 6879 50  0000 L CNN
-F 1 "SMBJ5.0A" V 6295 6879 50  0000 L CNN
-F 2 "ValTronix:D_SMB" H 6250 6600 50  0001 C CNN
-F 3 "https://m.littelfuse.com/~/media/electronics/datasheets/tvs_diodes/littelfuse_tvs_diode_smbj_datasheet.pdf.pdf" H 6200 6800 50  0001 C CNN
-	1    6250 6800
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	6000 7400 6250 7400
-Text Label 6000 7400 0    50   ~ 0
-N
-Wire Wire Line
-	6000 6200 6250 6200
-Text Label 6000 6200 0    50   ~ 0
-5V
-Wire Wire Line
-	6250 7400 6250 6950
-Wire Wire Line
-	6250 6650 6250 6200
-Wire Wire Line
-	4600 1950 4600 2700
-$Comp
-L ValTronix:2N3906 Q1
-U 1 1 5ED7D186
-P 4150 6650
-F 0 "Q1" H 4340 6604 50  0000 L CNN
-F 1 "2N3906" H 4340 6695 50  0000 L CNN
-F 2 "ValTronix:TO-92_Inline_Narrow_Oval" H 4350 6575 50  0001 L CIN
-F 3 "https://www.fairchildsemi.com/datasheets/2N/2N3906.pdf" H 4150 6650 50  0001 L CNN
-	1    4150 6650
-	1    0    0    1   
-$EndComp
-$Comp
-L Connector:TestPoint_Alt TP13
-U 1 1 5F780E02
-P 10000 5550
-F 0 "TP13" H 10058 5668 50  0000 L CNN
-F 1 "GNDA" H 10058 5577 50  0000 L CNN
-F 2 "Measurement_Points:Measurement_Point_Round-TH_Big" H 10200 5550 50  0001 C CNN
-F 3 "~" H 10200 5550 50  0001 C CNN
-	1    10000 5550
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:PWR_FLAG #FLG?
-U 1 1 60BAFF0B
-P 8050 3700
-AR Path="/60BAFF0B" Ref="#FLG?"  Part="1" 
-AR Path="/5ECFDCE6/60BAFF0B" Ref="#FLG01"  Part="1" 
-F 0 "#FLG01" H 8050 3775 50  0001 C CNN
-F 1 "PWR_FLAG" H 8050 3873 50  0000 C CNN
-F 2 "" H 8050 3700 50  0001 C CNN
-F 3 "~" H 8050 3700 50  0001 C CNN
-	1    8050 3700
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:PWR_FLAG #FLG?
-U 1 1 60BAFF11
-P 8300 5750
-AR Path="/60BAFF11" Ref="#FLG?"  Part="1" 
-AR Path="/5ECFDCE6/60BAFF11" Ref="#FLG02"  Part="1" 
-F 0 "#FLG02" H 8300 5825 50  0001 C CNN
-F 1 "PWR_FLAG" H 8300 5923 50  0000 C CNN
-F 2 "" H 8300 5750 50  0001 C CNN
-F 3 "~" H 8300 5750 50  0001 C CNN
-	1    8300 5750
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	8050 3700 8050 3750
-Wire Wire Line
-	8300 5750 8300 5700
-Connection ~ 1100 3750
-Wire Wire Line
-	1100 3750 900  3750
-Wire Wire Line
-	1100 1950 1100 2250
-Wire Wire Line
-	900  1950 1100 1950
-Connection ~ 1100 1950
-Wire Wire Line
-	1100 1950 1200 1950
-Text Notes 600  7650 0    75   ~ 15
-Crowbar and over voltage protection
-Wire Notes Line
-	550  7700 550  5900
-Wire Notes Line
-	550  5900 6850 5900
-Wire Notes Line
-	6850 5900 6850 7700
-Wire Notes Line
-	6850 7700 550  7700
-Connection ~ 8450 3750
-Connection ~ 9200 3750
-Connection ~ 9950 1950
-Wire Wire Line
-	9950 1950 10400 1950
-Connection ~ 9400 3750
-Wire Wire Line
-	9400 3750 9950 3750
-Connection ~ 9400 1950
-Wire Wire Line
-	9400 1950 9950 1950
-Wire Wire Line
-	7700 3750 8050 3750
-Wire Wire Line
-	10400 3750 9950 3750
-Connection ~ 9950 3750
-Wire Notes Line
-	550  550  11150 550 
-Wire Notes Line
-	11150 550  11150 4200
-Wire Notes Line
-	11150 4200 550  4200
-Wire Notes Line
-	550  4200 550  550 
-Text Notes 600  4150 0    75   ~ 15
-+3V3 digital (CAUTION: referenced to mains!)
-Connection ~ 8300 5000
-Wire Wire Line
-	8300 5000 8650 5000
-Wire Wire Line
-	10000 5000 10600 5000
-Wire Wire Line
-	8650 5700 9400 5700
-Wire Wire Line
-	10000 5550 10000 5700
-Wire Wire Line
-	9400 5700 10000 5700
-Connection ~ 9400 5700
-Wire Wire Line
-	10600 5700 10600 5850
-Wire Notes Line
-	11150 4300 11150 6450
-Wire Notes Line
-	11150 6450 6950 6450
-Wire Notes Line
-	6950 6450 6950 4300
-Wire Notes Line
-	6950 4300 11150 4300
-Text Notes 7000 6400 0    75   ~ 15
-+3V3 analog (CAUTION: referenced to mains!)
-Wire Wire Line
-	10600 5700 10000 5700
-Connection ~ 10000 5700
-Connection ~ 8050 3750
-Wire Wire Line
-	8050 3750 8450 3750
-Connection ~ 8300 5700
-Wire Wire Line
-	8300 5700 8650 5700
-Wire Notes Line
-	550  4300 550  5800
-Wire Notes Line
-	550  5800 2900 5800
-Wire Notes Line
-	2900 5800 2900 4300
-Wire Notes Line
-	2900 4300 550  4300
-Text Notes 600  5750 0    75   ~ 15
-Voltage Supervisor
+Text Notes 8400 2200 0    50   ~ 10
+Caution:\n- No over/under voltage protection\n- No reverse polarity protection
+Text Notes 8400 1050 0    50   ~ 10
+3.3V or 5V
 $EndSCHEMATC
